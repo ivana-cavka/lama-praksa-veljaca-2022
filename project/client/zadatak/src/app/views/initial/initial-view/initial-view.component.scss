@@ -1,0 +1,31 @@
+/* .p-menuitem-text {
+    color: azure;
+}
+:host ::ng-deep .p-menuitem-text {
+    color: azure;
+} */
+
+.p-menubar {
+    color: aliceblue;
+}
+
+.fd {
+    float: left;
+    width: 100%;
+}
+
+/* .filter-data.filter {
+    margin-left: 5%;
+}
+
+.filter-data.podatci {
+    margin-left: 95%;
+} */
+
+.main-page-template{
+    margin-top: auto;
+    width: 99%;
+    height: 790px;
+    margin: auto;
+    box-shadow: 10px 4px 8px 10px rgba(0, 0, 0, 0.2), 10px 6px 20px 10px rgba(0, 0, 0, 0.19);
+}
