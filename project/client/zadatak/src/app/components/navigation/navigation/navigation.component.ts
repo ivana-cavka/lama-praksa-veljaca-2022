@@ -59,7 +59,7 @@ export class NavigationComponent implements OnInit {
             label: 'Poslovni partneri'
           },
           {
-            label: 'Atributi predmeta'
+            label: 'Atributi predmeta' , routerLink: 'atributi-predmeti'
           },
           {
             label: 'Atributi pismena'
