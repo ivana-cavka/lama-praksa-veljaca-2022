@@ -8,7 +8,8 @@ import { InitialViewComponent } from './views/initial/initial-view/initial-view.
 import { HomeComponent } from './views/home/home/home.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent }
+  { path: '', component: HomeComponent },
+  { path: '/init', component: InitialViewComponent },
 ];
 
 @NgModule({
