@@ -16,7 +16,8 @@ import { AtriputiPredmetaComponent } from './components/atriputi-predmeta/atripu
 
 const routes: Routes = [
   { path: '', component: HomeComponent, },
-  { path: 'atributi-predmeti', component: AtriputiPredmetaComponent }
+  { path: 'atributi-predmeti', component: AtriputiPredmetaComponent },
+  { path: 'init/', component: InitialViewComponent}
 ];
 
 @NgModule({
