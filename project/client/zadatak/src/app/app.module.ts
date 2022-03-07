@@ -9,13 +9,16 @@ import { NavigationComponent } from './components/navigation/navigation/navigati
 import {TabViewModule} from 'primeng/tabview';
 import {TableModule} from 'primeng/table'; 
 import { AtriputiPredmetaComponent } from './components/atriputi-predmeta/atriputi-predmeta.component';
-
+import { AtributiZadatakaComponent } from './components/atributi-zadataka/atributi-zadataka.component';
+import { ZadatakViewComponent } from './views/zadatak/zadatak-view/zadatak-view.component';
 @NgModule({
   declarations: [
     AppComponent,
     NavigationComponent,
     InitialViewComponent,
-    AtriputiPredmetaComponent
+    AtriputiPredmetaComponent,
+    AtributiZadatakaComponent,
+    ZadatakViewComponent
   ],
   imports: [
     BrowserModule,

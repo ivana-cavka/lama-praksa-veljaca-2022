@@ -1,0 +1,86 @@
+<p-tabView styleClass="bg-lama bg-blue-800 border-0 rounded-none">
+  <p-tabPanel header="VRSTA ZADATKA">
+    <div styleClass="w-full h-1/6">
+      <div class="w-1/2; float-left" style="margin-left: 1%; padding-top: 1px; padding-bottom: 1px">
+        <span class="ui-float-label h-1/6">
+          <label style="padding-bottom: 20px" for="float-input">Filter... </label>
+          <input class="h-1/6" id="float-input" type="text" size="10" pInputText />
+        </span>
+      </div>
+      <div class="flex px-4 items-start justify-between left-1/2" style="margin-left: 93%; padding-top: 30px; padding-bottom: 25px">
+        <i class="pi pi-folder">PODATCI</i>
+      </div>
+    </div>
+    <div class="main-page-template">
+      <div class="flex flex-col w-11/12 h-full" styleClass="bg-blue-800 text-primary" class="text-primary">
+        <p-table [value]="vrsta">
+          <ng-template pTemplate="header">
+            <tr>
+              <th>ID</th>
+              <th>Naziv</th>
+            </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-vrsta (click)="update()">
+            <!-- <tr mat-row (click)="editAssignment(vrsta.id)"> -->
+            <tr  class="clickable" [routerLink]="['/atributi-zadataka/one/' + vrsta.id]">
+              <td>{{ vrsta.id }}</td>
+              <td>{{ vrsta.naziv }}</td>
+            </tr>
+          </ng-template>
+        </p-table>
+      </div>
+    </div>
+  </p-tabPanel>
+  <!--       <p-tabPanel header="TIP PREDMETA">
+        <div class="main-page-template">
+          <div class="flex flex-col w-11/12 h-full" styleClass="bg-blue-800 text-primary" class="text-primary">
+            <p-table [value]="tip">
+              <ng-template pTemplate="header">
+                <tr>
+                  <th>ID</th>
+                  <th>Aktivan</th>
+                  <th>Naziv</th>
+                </tr>
+              </ng-template>
+              <ng-template pTemplate="body" let-tip>
+                <tr>
+                  <td>{{ tip.id }}</td>
+                  <td>
+                    <i *ngIf="tip.aktivan; else inactive" class="pi pi-check-circle text-green-500"></i>
+                  </td>
+                  <td>{{ tip.naziv }}</td>
+                </tr>
+              </ng-template>
+            </p-table>
+          </div>
+        </div>
+      </p-tabPanel>
+      <p-tabPanel header="KLASIFIKACIJA PREDMETA">
+        <div class="main-page-template">
+          <div class="flex flex-col w-11/12 h-full" styleClass="bg-blue-800 text-primary" class="text-primary">
+            <p-table [value]="klas">
+              <ng-template pTemplate="header">
+                <tr>
+                  <th>ID</th>
+                  <th>Aktivan</th>
+                  <th>Naziv</th>
+                </tr>
+              </ng-template>
+              <ng-template pTemplate="body" let-klas>
+                <tr>
+                  <td>{{ klas.id }}</td>
+                  <td>
+                    <i *ngIf="klas.aktivan; else inactive" class="pi pi-check-circle text-green-500"></i>
+                  </td>
+                  <td>{{ klas.naziv }}</td>
+                </tr>
+              </ng-template>
+            </p-table>
+          </div>
+        </div>
+      </p-tabPanel> -->
+</p-tabView>
+
+<ng-template #inactive>
+  <i class="pi pi-times-circle text-red-500"></i>
+</ng-template>

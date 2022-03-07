@@ -65,7 +65,7 @@ export class NavigationComponent implements OnInit {
             label: 'Atributi pismena'
           },
           {
-            label: 'Atributi zadataka'
+            label: 'Atributi zadataka', routerLink: 'atributi-zadataka'
           },
           {
             label: 'Klasifikacijske oznake'
