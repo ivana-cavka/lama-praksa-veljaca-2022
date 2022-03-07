@@ -7,16 +7,19 @@ import { NavigationComponent } from './components/navigation/navigation/navigati
 import {TabViewModule} from 'primeng/tabview';
 import {TableModule} from 'primeng/table'; 
 import { AtriputiPredmetaComponent } from './components/atriputi-predmeta/atriputi-predmeta.component';
+import { AtributiPismenaComponent } from './components/atributi-pismena/atributi-pismena/atributi-pismena.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavigationComponent,AtriputiPredmetaComponent
+    NavigationComponent,AtriputiPredmetaComponent, AtributiPismenaComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MenubarModule,TabViewModule,TableModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
