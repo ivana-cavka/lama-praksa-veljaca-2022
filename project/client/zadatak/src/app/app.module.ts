@@ -16,7 +16,7 @@ import { FilterComponent } from './components/navigation/subnavigation/filter/fi
 import {MenuModule} from 'primeng/menu';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {ButtonModule} from 'primeng/button';
-
+import {TabMenuModule} from 'primeng/tabmenu';
 
 @NgModule({
   declarations: [
@@ -38,6 +38,7 @@ import {ButtonModule} from 'primeng/button';
     MenuModule,
     BrowserAnimationsModule,
     ButtonModule,
+    TabMenuModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
