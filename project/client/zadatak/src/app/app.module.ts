@@ -13,6 +13,11 @@ import { AtributiZadatakaComponent } from './components/atributi-zadataka/atribu
 import { ZadatakViewComponent } from './views/zadatak/zadatak-view/zadatak-view.component';
 import { PodatciComponent } from './components/navigation/subnavigation/podatci/podatci.component';
 import { FilterComponent } from './components/navigation/subnavigation/filter/filter.component';
+import {MenuModule} from 'primeng/menu';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {ButtonModule} from 'primeng/button';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,6 +35,9 @@ import { FilterComponent } from './components/navigation/subnavigation/filter/fi
     MenubarModule,
     InputTextModule,
     TabViewModule,TableModule,
+    MenuModule,
+    BrowserAnimationsModule,
+    ButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
