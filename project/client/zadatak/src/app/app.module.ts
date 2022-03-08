@@ -14,6 +14,11 @@ import { ZadatakViewComponent } from './views/zadatak/zadatak-view/zadatak-view.
 import { PodatciComponent } from './components/navigation/subnavigation/podatci/podatci.component';
 import { FilterComponent } from './components/navigation/subnavigation/filter/filter.component';
 import { HttpClientModule } from '@angular/common/http';
+import {MenuModule} from 'primeng/menu';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {ButtonModule} from 'primeng/button';
+import {TabMenuModule} from 'primeng/tabmenu';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,6 +37,10 @@ import { HttpClientModule } from '@angular/common/http';
     InputTextModule,
     TabViewModule,TableModule,
     HttpClientModule,
+    MenuModule,
+    BrowserAnimationsModule,
+    ButtonModule,
+    TabMenuModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

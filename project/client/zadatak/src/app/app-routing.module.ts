@@ -15,13 +15,15 @@ import { HomeComponent } from './views/home/home/home.component';
 import { AtriputiPredmetaComponent } from './components/atriputi-predmeta/atriputi-predmeta.component';
 import { AtributiZadatakaComponent } from './components/atributi-zadataka/atributi-zadataka.component';
 import { ZadatakViewComponent } from './views/zadatak/zadatak-view/zadatak-view.component';
+import { PodatciComponent } from './components/navigation/subnavigation/podatci/podatci.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, },
   { path: 'atributi-predmeti', component: AtriputiPredmetaComponent },
   { path: 'init', component: InitialViewComponent},
   { path: 'atributi-zadataka', component: AtributiZadatakaComponent},
-  { path: 'atributi-zadataka/one/:id', component: ZadatakViewComponent}  
+  { path: 'atributi-zadataka/one/:id', component: ZadatakViewComponent},
+  { path: 'atributi-zadataka/new', component: ZadatakViewComponent },
 ];
 
 @NgModule({

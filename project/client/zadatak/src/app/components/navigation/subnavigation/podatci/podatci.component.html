@@ -1,1 +1,6 @@
-<p>podatci works!</p>
+<div>
+    <p-menu #menu [popup]="true" [model]="items"></p-menu>
+    <button type="button" pButton pRipple icon="pi pi-book" class="p-button-text" style="font-variant: small-caps; color:black;"
+    label="Podatci" (click)="menu.toggle($event)"></button>
+</div>
+

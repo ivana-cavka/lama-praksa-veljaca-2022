@@ -1,22 +1,36 @@
-.menu-bar {
-    background-color: rgb(41, 87, 187);
-    text-align: left;
+:host ::ng-deep .p-tabmenu {
+    background-color: rgba(26,56,101,255);
+    color:white;
+    margin: 10px;
+    font-variant: small-caps;
 }
 
-.subnav-bar {
-    text-align: left;
+.wijmo-wijmenu-horizontal, .wijmo-wijmenu-list {
+    background: none;
+    background-color: red;
 }
 
 .card {
-    background-color: rgb(246, 246, 248);
-    margin-top: 1%;
+    background-color: white;
+    margin-top: 5%;
     margin-left: 20%;
     width: 50%;
     border-style: solid;
-    border-color: rgb(54, 57, 77);
+    border-color: rgba(26,56,101,255);
     border-width: 1px;
-    border-style: round($number: 0);
+    //border-style: round($number: 0);
     height: 300px;
+    border-radius: 20px;
+}
+
+.inner {
+    background-color: rgb(246, 246, 248);
+    margin-top:2%;
+    margin-left: 4%;
+    margin-right: 4%;
+    width: 100%;
+    height:100%;
+    border-radius: 20px;
 }
 
 .form-header {
@@ -24,6 +38,7 @@
     margin-top: 4%;
     margin-left: 1%;
     border-style: round($number: 20);
+    font-variant: small-caps;
 }
 
 .form-body-input {
@@ -32,6 +47,17 @@
 }
 
 .form-body-label {
-    color: rgb(54, 57, 77);
+    color: rgba(26,56,101,255);
     margin-left: 3%;
+}
+
+input {
+    height: 40px;
+    width: 100%;
+}
+
+button {
+    float:right;
+    font-variant: small-caps;
+    color: black;
 }
