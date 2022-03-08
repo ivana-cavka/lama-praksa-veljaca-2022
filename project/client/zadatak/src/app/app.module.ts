@@ -13,6 +13,7 @@ import { AtributiZadatakaComponent } from './components/atributi-zadataka/atribu
 import { ZadatakViewComponent } from './views/zadatak/zadatak-view/zadatak-view.component';
 import { PodatciComponent } from './components/navigation/subnavigation/podatci/podatci.component';
 import { FilterComponent } from './components/navigation/subnavigation/filter/filter.component';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,6 +31,7 @@ import { FilterComponent } from './components/navigation/subnavigation/filter/fi
     MenubarModule,
     InputTextModule,
     TabViewModule,TableModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
