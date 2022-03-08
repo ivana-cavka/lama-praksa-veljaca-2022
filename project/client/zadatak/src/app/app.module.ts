@@ -11,6 +11,8 @@ import {TableModule} from 'primeng/table';
 import { AtriputiPredmetaComponent } from './components/atriputi-predmeta/atriputi-predmeta.component';
 import { AtributiZadatakaComponent } from './components/atributi-zadataka/atributi-zadataka.component';
 import { ZadatakViewComponent } from './views/zadatak/zadatak-view/zadatak-view.component';
+import { PodatciComponent } from './components/navigation/subnavigation/podatci/podatci.component';
+import { FilterComponent } from './components/navigation/subnavigation/filter/filter.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +20,9 @@ import { ZadatakViewComponent } from './views/zadatak/zadatak-view/zadatak-view.
     InitialViewComponent,
     AtriputiPredmetaComponent,
     AtributiZadatakaComponent,
-    ZadatakViewComponent
+    ZadatakViewComponent,
+    PodatciComponent,
+    FilterComponent
   ],
   imports: [
     BrowserModule,
