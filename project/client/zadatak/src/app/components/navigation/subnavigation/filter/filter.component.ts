@@ -11,6 +11,7 @@ export class FilterComponent implements OnInit {
 
   @Input() filterParam: any;
   @Input() isSearchResult: boolean = false;
+  filterBy: any;
   constructor(
     private service: ZadatakService,
     private router: Router,
@@ -25,9 +26,12 @@ export class FilterComponent implements OnInit {
     this.filterParam = this.route.snapshot.queryParams['search'];
 
     let all = this.service.getAllAssignments();
-    /* for(let a in all){
-      if(a.)
-    } */
+    
     all.forEach(function (value) { console.log(value); });
+/*     all.forEach( (value) =>{
+      if(value.toString == this.filterParam.toString){
+        this.filterBy = value;
+      }
+    }); */
   }
 }
