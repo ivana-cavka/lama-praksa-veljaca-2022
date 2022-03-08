@@ -30,7 +30,7 @@ export class ZadatakViewComponent implements OnInit {
       ];
   }
 
-  close (){
+  /* close (){
     this.router.navigateByUrl('/atributi-zadataka');
-  }
+  } */
 }
