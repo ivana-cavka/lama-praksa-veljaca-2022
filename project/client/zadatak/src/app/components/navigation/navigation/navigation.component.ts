@@ -1,109 +1,113 @@
 import { Component, OnInit } from '@angular/core';
-import {MenuItem} from 'primeng/api';
+import { MenuItem } from 'primeng/api';
 
 @Component({
   selector: 'app-navigation',
   templateUrl: './navigation.component.html',
-  styleUrls: ['./navigation.component.scss']
+  styleUrls: ['./navigation.component.scss'],
 })
 export class NavigationComponent implements OnInit {
-  items:MenuItem[]=[];
-  constructor() { }
+  items: MenuItem[] = [];
+  constructor() {}
 
   ngOnInit(): void {
     this.items = [
       {
+        label: 'LAMA FMS',
+        routerLink: '/',
+      },
+      {
         label: 'Knjige',
         items: [
           {
-            label: '      '
+            label: '      ',
           },
-        ]
+        ],
       },
       {
         label: 'Predmeti i pismena',
         items: [
           {
-            label: '      '
+            label: '      ',
           },
-        ]
+        ],
       },
       {
         label: 'Zadaci',
         items: [
           {
-            label: '      '
+            label: '      ',
           },
-        ]
+        ],
       },
       {
         label: 'Ovjere',
         items: [
           {
-            label: '      '
+            label: '      ',
           },
-        ]
+        ],
       },
       {
         label: 'Predmeti',
         items: [
           {
-            label: '      '
+            label: '      ',
           },
-        ]
+        ],
       },
       {
         label: 'Katalozi',
         items: [
           {
-            label: 'Poslovni partneri'
+            label: 'Poslovni partneri',
           },
           {
-            label: 'Atributi predmeta' , routerLink: 'atributi-predmeti'
+            label: 'Atributi predmeta',
+            routerLink: 'atributi-predmeti',
           },
           {
-            label: 'Atributi pismena'
+            label: 'Atributi pismena',
           },
           {
-            label: 'Atributi zadataka'
+            label: 'Atributi zadataka',
           },
           {
-            label: 'Klasifikacijske oznake'
+            label: 'Klasifikacijske oznake',
           },
           {
-            label: 'Ustrojstvene jedinice'
+            label: 'Ustrojstvene jedinice',
           },
           {
-            label: 'Konfiguracija'
+            label: 'Konfiguracija',
           },
           {
-            label: 'E-računi'
+            label: 'E-računi',
           },
           {
-            label: 'Opći katalozi'
+            label: 'Opći katalozi',
           },
           {
-            label: 'Sigurnost'
+            label: 'Sigurnost',
           },
-        ]
+        ],
       },
       {
         label: 'Alati',
         items: [
           {
-            label: '      '
+            label: '      ',
           },
-        ]
+        ],
       },
       {
         label: 'Pomoć',
         items: [
           {
-            label: '      '
+            label: '      ',
           },
-        ]
+        ],
       },
     ];
   }
-
 }
