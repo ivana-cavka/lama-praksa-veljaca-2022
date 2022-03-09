@@ -1,0 +1,16 @@
+{
+    "tasks": [
+        {
+            "id": "TSV-1",
+            "name": "Izrada dokumenta"
+        },
+        {
+            "id": "TSV-2",
+            "name": "Kontakt stranke"
+        },
+        {
+            "id": "TSV-3",
+            "name": "Organizacija sastanka"
+        }
+    ]
+}
