@@ -27,20 +27,18 @@ export class FilterComponent implements OnInit {
   ngOnInit(): void {
     this.filterParam = this.route.snapshot.queryParams['search'];
 
-    /* let all = this.service.getAllAssignments(); */
+    let all = this.service.getAllAssignments();
 
-
-
+    all.forEach(function (value) {
+      console.log(value);
+    });
     /* const fs = require('fs');
 
     this.http.get<Zadatak[]>(JSON.parse(fs.readFileSync('project/server/server.js'))).subscribe((data: Zadatak[]) => {
       this.zadatci = data;
     }); */
 
-
-
-    /*     all.forEach(function (value) { console.log(value); });
-    all.forEach( (value) =>{ */
+    /* all.forEach( (value) =>{ */
     /* if(value.toString.toUpperCase() == this.filterParam.toString){
         this.filterBy = value;
       } */
