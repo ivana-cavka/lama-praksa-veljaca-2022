@@ -1,4 +1,1 @@
-[
-    {"id":"KTG-01","naziv":"Ugovor"},
-    {"id":"KTG-02","naziv":"Ugovor1"}
-]
+[{"id":"KTG-01","idNum":"1","naziv":"Ugovor1"},{"naziv":"aaaa","id":"KTG-02","idNum":"2"},{"naziv":null,"checked":null,"id":"KTG-03","idNum":"3"},{"naziv":null,"checked":true,"id":"KTG-04","idNum":"4"},{"naziv":"pokusaj","checked":true,"id":"KTG-05","idNum":"5","active":true},{"naziv":"pokusaj2","checked":false,"id":"KTG-06","idNum":"6","active":false}]

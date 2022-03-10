@@ -4,17 +4,18 @@ import { AtributiPismenaService } from 'src/app/services/atributi-pismena_servic
 @Component({
   selector: 'app-atributi-pismena',
   templateUrl: './atributi-pismena.component.html',
-  styleUrls: ['./atributi-pismena.component.scss']
+  styleUrls: ['./atributi-pismena.component.scss'],
 })
 export class AtributiPismenaComponent implements OnInit {
-  atributi:any[]=[];
-  constructor(public service:AtributiPismenaService) { }
+  atributi: any[] = [];
+  constructor(public service: AtributiPismenaService) {}
 
   ngOnInit(): void {
     this.service.getAll().subscribe((atributi: any) => {
       this.atributi = atributi.arr;
-      console.log("Data:")
-      console.log(this.atributi)
+      console.log('Data:');
+      console.log(this.atributi);
+      this.service.insertRecords(atributi);
     });
   }
 }
