@@ -18,7 +18,7 @@ import {MenuModule} from 'primeng/menu';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {ButtonModule} from 'primeng/button';
 import {TabMenuModule} from 'primeng/tabmenu';
-
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,6 +41,7 @@ import {TabMenuModule} from 'primeng/tabmenu';
     BrowserAnimationsModule,
     ButtonModule,
     TabMenuModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

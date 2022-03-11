@@ -1,22 +1,24 @@
 <p-tabView styleClass="bg-lama bg-blue-800 border-0 rounded-none">
   <p-tabPanel header="VRSTA ZADATKA">
-    <!-- <div styleClass="w-full h-1/6"> -->
-      <!-- <app-filter [isSearchResult]="true" [filterParam]="item"></app-filter> -->
-      <app-filter></app-filter>
-      <!-- <div class="flex px-4 items-start justify-between left-1/2" style="margin-left: 93%; padding-top: 30px; padding-bottom: 25px">
-        <i class="pi pi-folder">PODATCI</i> -->
+    <!--       <app-filter></app-filter> -->
+
+    <!--  -->
+    <div class="w-1/2; float-left" style="margin-left: 1%; padding-top: 1px; padding-bottom: 1px">
+      <span class="ui-float-label h-1/6">
+        <label style="padding-bottom: 20px" for="float-input"> <i class="pi pi-filter"></i></label>
+        <!-- <input class="h-1/6" id="float-input" type="text" size="10" pInputText /> -->
+        <!-- <input ng-model="searchText" class="h-1/6 form-control" id="float-input" type="text" size="10" pInputText ng-keyup="filterFunc()" /> -->
+        <input [(ngModel)]="listFilter" type="text" class="h-1/6 form-control" id="filterInput" placeholder="Filter... " size="10" pInputText />
+      </span>
+    </div>
+    <!--  -->
     <div styleClass="w-full h-1/6 justify-between">
-      <!-- <div class="w-1/2; float-left" style="margin-left: 1%; padding-top: 1px; padding-bottom: 1px">
-        <span class="ui-float-label h-1/6">
-          <input class="h-1/6" id="float-input" type="text" size="20" placeholder="Filter..." pInputText />
-        </span>
-      </div> -->
       <div class="flex px-4" style="margin-left: 90%; padding-top: 10px; padding-bottom: 10px">
         <app-podatci></app-podatci>
       </div>
     </div>
     <div class="main-page-template">
-      <div class="flex flex-col w-11/12 h-full" styleClass="bg-blue-800 text-primary" class="text-primary">
+      <div  *ngIf="isFiltered ;else notFilteredRef" class="flex flex-col w-11/12 h-full" styleClass="bg-blue-800 text-primary" class="text-primary">
         <p-table [value]="vrsta">
           <ng-template pTemplate="header">
             <tr>
@@ -25,8 +27,7 @@
             </tr>
           </ng-template>
           <ng-template pTemplate="body" let-vrsta (click)="update()">
-            <!-- <tr mat-row (click)="editAssignment(vrsta.id)"> -->
-            <tr class="clickable" [routerLink]="['/atributi-zadataka/one/' + vrsta.id]">
+            <tr *ngFor='let assignments of filteredAssignments' class="clickable" [routerLink]="['/atributi-zadataka/one/' + vrsta.id]">
               <td>{{ vrsta.id }}</td>
               <td>{{ vrsta.naziv }}</td>
             </tr>
@@ -39,4 +40,21 @@
 
 <ng-template #inactive>
   <i class="pi pi-times-circle text-red-500"></i>
+</ng-template>
+
+<ng-template #notFilteredRef>
+  <p-table [value]="vrsta">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>ID</th>
+        <th>Naziv</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-vrsta (click)="update()">
+      <tr class="clickable" [routerLink]="['/atributi-zadataka/one/' + vrsta.id]">
+        <td>{{ vrsta.id }}</td>
+        <td>{{ vrsta.naziv }}</td>
+      </tr>
+    </ng-template>
+  </p-table>
 </ng-template>

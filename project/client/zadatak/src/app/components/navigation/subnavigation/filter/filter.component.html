@@ -1,6 +1,42 @@
 <div class="w-1/2; float-left" style="margin-left: 1%; padding-top: 1px; padding-bottom: 1px">
   <span class="ui-float-label h-1/6">
-    <label style="padding-bottom: 20px" for="float-input"> <i class="pi pi-filter"></i> Filter... </label>
-    <input class="h-1/6" id="float-input" type="text" size="10" pInputText />
+    <label style="padding-bottom: 20px" for="float-input"> <i class="pi pi-filter"></i></label>
+    <!-- <input class="h-1/6" id="float-input" type="text" size="10" pInputText /> -->
+    <!-- <input ng-model="searchText" class="h-1/6 form-control" id="float-input" type="text" size="10" pInputText ng-keyup="filterFunc()" /> -->
+    <input [(ngModel)]="listFilter" type="text" class="h-1/6 form-control" id="filterInput" placeholder="Filter... "  size="10" pInputText  >
   </span>
 </div>
+
+<!-- <div ng-app="myApp" ng-controller="namesCtrl">
+
+  <p>Type a letter in the input field:</p>
+  
+  <p><input type="text" ng-model="test"></p>
+  
+  <ul>
+    <li ng-repeat="x in names | filter:test">
+      {{ x }}
+    </li>
+  </ul>
+  
+  </div>
+  
+  <script>
+  angular.module('myApp', []).controller('namesCtrl', function($scope) {
+      $scope.names = [
+          'Jani',
+          'Carl',
+          'Margareth',
+          'Hege',
+          'Joe',
+          'Gustav',
+          'Birgit',
+          'Mary',
+          'Kai'
+      ];
+  });
+  </script>
+  
+  <p>The list will only consists of names matching the filter.</p> -->
+  
+  

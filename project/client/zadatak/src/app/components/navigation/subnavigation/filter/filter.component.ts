@@ -1,12 +1,12 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, NgModule } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ZadatakService } from 'src/app/services/zadatak.service';
-interface Zadatak {
+/* interface Zadatak {
   id: string;
   aktivan: boolean;
   naziv: string;
-}
+} */
 
 @Component({
   selector: 'app-filter',
@@ -14,35 +14,45 @@ interface Zadatak {
   styleUrls: ['./filter.component.scss'],
 })
 export class FilterComponent implements OnInit {
-  @Input() filterParam: any;
-  filterBy: any;
-  zadatci: Zadatak[] = [];
+  atributi: any;
+  @Input() searchText: any;
 
-  constructor(private service: ZadatakService, private router: Router, private route: ActivatedRoute, private http: HttpClient) {}
+  _listFilter = '';
 
-  search(filterParam: string): void {
-    this.router.navigate([], { queryParams: { search: filterParam } });
+  get listFilter(): string {
+    return this._listFilter;
+  }
+  set listFilter(value: string) {
+    this._listFilter = value;
+    this.filteredAssignments = this.listFilter ? this.doFilter(this.listFilter) : this.assignments;
   }
 
+  filteredAssignments: any[] = [];
+  assignments: any[] = [];
+
+  doFilter(filterBy: string): any[] {
+    filterBy = filterBy.toLocaleLowerCase();
+    return this.assignments.filter((game: any) => game.gameName.toLocaleLowerCase().indexOf(filterBy) !== -1);
+  }
+
+  constructor(private service: ZadatakService, private router: Router, private route: ActivatedRoute, private http: HttpClient) {
+    this.filteredAssignments = this.assignments;
+    this.listFilter = '';
+  }
+
+  /* search(filterParam: string): void {
+    this.router.navigate([], { queryParams: { search: filterParam } });
+  } */
+
   ngOnInit(): void {
-    this.filterParam = this.route.snapshot.queryParams['search'];
+    this.service.getAllAssignments().subscribe((atr: any) => {
+      this.atributi = atr;
 
-    let all = this.service.getAllAssignments();
+      /* if(this.filterParam != null) */
+      console.log(this.searchText);
 
-    all.forEach(function (value) {
-      console.log(value);
+      /* console.log('Data:');
+      console.log(this.atributi[0].aktivan); */
     });
-    /* const fs = require('fs');
-
-    this.http.get<Zadatak[]>(JSON.parse(fs.readFileSync('project/server/server.js'))).subscribe((data: Zadatak[]) => {
-      this.zadatci = data;
-    }); */
-
-    /* all.forEach( (value) =>{ */
-    /* if(value.toString.toUpperCase() == this.filterParam.toString){
-        this.filterBy = value;
-      } */
-    /* console.log(value);
-    }); */
   }
 }

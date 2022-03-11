@@ -2,12 +2,16 @@ const express=require("express");
 const app=express();
 const port=3000;
 const fs = require("fs");
+const cors = require("cors");
+
+app.use(cors());
 
 const getData = (path) => JSON.parse(fs.readFileSync(path));
 
 app.get("/",(req,res)=>{
     const zadatci = getData("db/zadatci.json");
-    res.send( {zadatci} ); 
+    /* res.send( {zadatci} );  */
+    res.send( zadatci); 
     /* console.log("Hello from server. "); */
 });
 
