@@ -1,7 +1,10 @@
-<div class="flex flex-col place-items-end"><app-split-button></app-split-button></div>
+<div class="flex flex-col place-items-end">
+    <button (click)="delete()" pButton class="p-button-danger p-button-rounded" icon="pi pi-times"></button>
+    <p-splitButton label="PODACI" [model]="this.items" styleClass="p-button-raised p-button-text mr-2 mb-2"></p-splitButton>
+</div>
 <p-tabView styleClass="bg-lama">
     <p-tabPanel header="VRSTE ZADATAKA">
-        <p-table [value]="tasks"  >
+        <p-table [value]="tasks" selectionMode="single" [(selection)]="selectedTask" dataKey="code" >
             <ng-template pTemplate="header">
                 <tr>
                     <th>ID</th>

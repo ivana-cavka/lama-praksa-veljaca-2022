@@ -1,7 +1,7 @@
 <div class="flex flex-col place-items-end"><app-split-button></app-split-button></div>
 <p-tabView styleClass="bg-lama">
     <p-tabPanel header="VRSTA PREDMETA">
-        <p-table [value]="vrsta"  >
+        <p-table [value]="vrsta" selectionMode="single" [(selection)]="selectedTask" dataKey="code" >
             <ng-template pTemplate="header">
                 <tr>
                     <th>ID</th>

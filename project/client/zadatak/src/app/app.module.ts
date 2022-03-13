@@ -11,6 +11,8 @@ import { TasksComponent } from './components/tasks/tasks/tasks.component';
 import { HttpClientModule } from '@angular/common/http';
 import {SplitButtonModule} from 'primeng/splitbutton';
 import { SplitButtonComponent } from './components/split-button/split-button/split-button.component';
+import { MessageService } from 'primeng/api';
+import {ButtonModule} from 'primeng/button';
 
 @NgModule({
   declarations: [
@@ -20,9 +22,9 @@ import { SplitButtonComponent } from './components/split-button/split-button/spl
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MenubarModule,TabViewModule,TableModule,HttpClientModule,SplitButtonModule
+    MenubarModule,TabViewModule,TableModule,HttpClientModule,SplitButtonModule, ButtonModule
   ],
-  providers: [],
+  providers:[MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -9,6 +9,7 @@ app.get("/", (req, res) => {
     const arr = JSON.parse(fs.readFileSync("db/tasks.json"));
     res.send({arr});
   });
+  
 app.listen(port,()=>{
     console.log("> Server is up and running on port: "+port)
 });
