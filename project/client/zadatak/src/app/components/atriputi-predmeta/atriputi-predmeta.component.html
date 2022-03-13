@@ -20,6 +20,24 @@
               <td>{{ vrsta.naziv }}</td>
             </tr>
           </ng-template>
+<p-tabView styleClass="bg-lama">
+    <p-tabPanel header="VRSTA PREDMETA">
+        <p-table [value]="vrsta"  >
+            <ng-template pTemplate="header">
+                <tr>
+                    <th>ID</th>
+                    <th>Aktivan</th>
+                    <th>Naziv</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-vrsta>
+                <tr>
+                    <td>{{vrsta.id}}</td>
+                    <td>{{vrsta.aktivan}}</td>
+                    <td>{{vrsta.naziv}}</td>
+                    
+                </tr>
+            </ng-template>
         </p-table>
       </div>
     </div>

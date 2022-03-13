@@ -19,6 +19,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {ButtonModule} from 'primeng/button';
 import {TabMenuModule} from 'primeng/tabmenu';
 import { FormsModule } from '@angular/forms';
+import { AtributiPismenaComponent } from './components/atributi-pismena/atributi-pismena/atributi-pismena.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,6 +31,11 @@ import { FormsModule } from '@angular/forms';
     ZadatakViewComponent,
     PodatciComponent,
     FilterComponent
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    NavigationComponent,AtriputiPredmetaComponent, AtributiPismenaComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +48,8 @@ import { FormsModule } from '@angular/forms';
     BrowserAnimationsModule,
     ButtonModule,
     TabMenuModule,
-    FormsModule
+    FormsModule,TabViewModule,TableModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
