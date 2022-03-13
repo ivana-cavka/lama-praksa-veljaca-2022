@@ -30,12 +30,8 @@ import { AtributiPismenaComponent } from './components/atributi-pismena/atributi
     AtributiZadatakaComponent,
     ZadatakViewComponent,
     PodatciComponent,
-    FilterComponent
+    FilterComponent,AtributiPismenaComponent
 
-@NgModule({
-  declarations: [
-    AppComponent,
-    NavigationComponent,AtriputiPredmetaComponent, AtributiPismenaComponent
   ],
   imports: [
     BrowserModule,

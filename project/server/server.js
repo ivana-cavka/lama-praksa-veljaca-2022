@@ -23,12 +23,8 @@ app.get("/atributi-zadataka/one",(req, res) => {
     res.send({ zadatak: assignment });
 });
 
-app.listen(port,() =>{
-    console.log("> Server is up and running on port : "+port);
-});
-app.use(cors());
-
 app.get("/", (req, res) => {
+    /* app.get("/atributi-pismena", (req, res) => { */
     const arr = JSON.parse(fs.readFileSync("database/atributi-pismena.json"));
     res.send({arr});
   });

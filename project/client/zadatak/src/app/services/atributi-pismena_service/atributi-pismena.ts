@@ -10,7 +10,7 @@ export class AtributiPismenaService{
     }
     getAll(){
         console.log("Service:");
-        console.log(this.http.get(environment.API_URl));
-        return this.http.get(environment.API_URl);
+        console.log(this.http.get(environment.API_URL));
+        return this.http.get(environment.API_URL);
     }
 }

@@ -13,31 +13,12 @@
           <ng-template pTemplate="body" let-vrsta>
             <tr>
               <td>{{ vrsta.id }}</td>
-              <!-- <td>{{vrsta.aktivan}}</td> -->
               <td>
                 <i *ngIf="vrsta.aktivan; else inactive" class="pi pi-check-circle text-green-500"></i>
               </td>
               <td>{{ vrsta.naziv }}</td>
             </tr>
           </ng-template>
-<p-tabView styleClass="bg-lama">
-    <p-tabPanel header="VRSTA PREDMETA">
-        <p-table [value]="vrsta"  >
-            <ng-template pTemplate="header">
-                <tr>
-                    <th>ID</th>
-                    <th>Aktivan</th>
-                    <th>Naziv</th>
-                </tr>
-            </ng-template>
-            <ng-template pTemplate="body" let-vrsta>
-                <tr>
-                    <td>{{vrsta.id}}</td>
-                    <td>{{vrsta.aktivan}}</td>
-                    <td>{{vrsta.naziv}}</td>
-                    
-                </tr>
-            </ng-template>
         </p-table>
       </div>
     </div>
@@ -81,7 +62,6 @@
           <ng-template pTemplate="body" let-klas>
             <tr>
               <td>{{ klas.id }}</td>
-              <!-- <td>{{klas.aktivan}}</td> -->
               <td>
                 <i *ngIf="klas.aktivan; else inactive" class="pi pi-check-circle text-green-500"></i>
               </td>
