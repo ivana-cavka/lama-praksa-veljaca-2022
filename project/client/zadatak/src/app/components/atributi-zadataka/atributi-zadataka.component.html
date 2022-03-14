@@ -14,20 +14,20 @@
     <!--  -->
     <div styleClass="w-full h-1/6 justify-between">
       <div class="flex px-4" style="margin-left: 90%; padding-top: 10px; padding-bottom: 10px">
-        <app-podatci></app-podatci>
+        <app-podatci [selectedVrsta]="selectedVrsta"></app-podatci>
       </div>
     </div>
     <div class="main-page-template">
       <div  *ngIf="isFiltered ;else notFilteredRef" class="flex flex-col w-11/12 h-full" styleClass="bg-blue-800 text-primary" class="text-primary">
-        <p-table [value]="vrsta">
+        <p-table [value]="vrsta"  selectionMode="single" [(selection)]="selectedVrsta" dataKey="id" responsiveLayout="scroll">
           <ng-template pTemplate="header">
             <tr>
               <th>ID</th>
               <th>Naziv</th>
             </tr>
           </ng-template>
-          <ng-template pTemplate="body" let-vrsta (click)="update()">
-            <tr *ngFor='let assignments of filteredAssignments' class="clickable" [routerLink]="['/atributi-zadataka/one/' + vrsta.id]">
+          <ng-template pTemplate="body" let-vrsta>
+            <tr [pSelectableRow]="vrsta">
               <td>{{ vrsta.id }}</td>
               <td>{{ vrsta.naziv }}</td>
             </tr>
@@ -43,15 +43,15 @@
 </ng-template>
 
 <ng-template #notFilteredRef>
-  <p-table [value]="vrsta">
+  <p-table [value]="vrsta" selectionMode="single" [(selection)]="selectedVrsta" dataKey="id" responsiveLayout="scroll" >
     <ng-template pTemplate="header">
       <tr>
         <th>ID</th>
         <th>Naziv</th>
       </tr>
     </ng-template>
-    <ng-template pTemplate="body" let-vrsta (click)="update()">
-      <tr class="clickable" [routerLink]="['/atributi-zadataka/one/' + vrsta.id]">
+    <ng-template pTemplate="body" let-vrsta>
+      <tr [pSelectableRow]="vrsta">
         <td>{{ vrsta.id }}</td>
         <td>{{ vrsta.naziv }}</td>
       </tr>

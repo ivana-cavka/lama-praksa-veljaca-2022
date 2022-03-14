@@ -1,14 +1,19 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ZadatakService } from 'src/app/services/zadatak.service';
+import { MessageService } from 'primeng/api';
 
 @Component({
   selector: 'app-atributi-zadataka',
   templateUrl: './atributi-zadataka.component.html',
   styleUrls: ['./atributi-zadataka.component.scss'],
+  providers: [MessageService],
 })
 export class AtributiZadatakaComponent implements OnInit {
   vrsta = [{}];
+
+  selectedVrsta: any;
+
   /*  */
   atributi: any;
   @Input() searchText: any;
@@ -37,9 +42,9 @@ export class AtributiZadatakaComponent implements OnInit {
   }
 
   /*  */
-  constructor(private service: ZadatakService) {
+  constructor(private service: ZadatakService, private messageService: MessageService) {
     this.service.getAllAssignments().subscribe((atr: any) => {
-      this.assignments = atr; 
+      this.assignments = atr;
     });
     this.filteredAssignments = this.assignments;
     this.listFilter = '';

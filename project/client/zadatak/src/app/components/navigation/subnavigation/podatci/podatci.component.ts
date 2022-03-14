@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/api';
 
 
@@ -11,16 +11,20 @@ export class PodatciComponent implements OnInit {
 
   items: MenuItem[] = [];
 
+  @Input()
+  selectedVrsta: any;
+
   constructor() { }
 
   ngOnInit() {
     this.items = [
         {label: 'Dodaj', icon: 'pi pi-fw pi-plus', routerLink: '/atributi-zadataka/new'},
-        {label: 'Uredi', icon: 'pi pi-fw pi-pencil', routerLink: '/atributi-zadataka/new'},
+        {label: 'Uredi', icon: 'pi pi-fw pi-pencil', routerLink: '/atributi-zadataka/update' + this.selectedVrsta.id},
         {label: 'Obriši', icon: 'pi pi-fw pi-trash', command: () => {
           this.delete();}
         }
     ];
+
   }
 
   log(item: any){
@@ -29,5 +33,6 @@ export class PodatciComponent implements OnInit {
   }
 
   delete(){
+    
   }
 }
