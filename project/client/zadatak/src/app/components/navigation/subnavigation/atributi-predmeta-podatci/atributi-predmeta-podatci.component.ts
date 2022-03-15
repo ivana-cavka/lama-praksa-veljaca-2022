@@ -21,7 +21,7 @@ export class AtributiPredmetaPodatciComponent implements OnInit {
 
   ngOnInit() {
     this.items = [
-        {label: 'Dodaj', icon: 'pi pi-fw pi-plus', routerLink: '/atributi-zadataka/new'},
+        {label: 'Dodaj', icon: 'pi pi-fw pi-plus', routerLink: '/atributi-predmeta/new'},
         {label: 'Uredi', icon: 'pi pi-fw pi-pencil'},
         {label: 'Obriši', icon: 'pi pi-fw pi-trash', command: () => {
           this.delete();}
