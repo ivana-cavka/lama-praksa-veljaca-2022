@@ -27,7 +27,7 @@ export class ZadatakViewComponent implements OnInit {
   onSave() {
     console.log(this.form.value);
     this.ZadatakService.add(this.form.value).subscribe((result) => {
-      this.router.navigateByUrl('/');
+      this.router.navigateByUrl('/atributi-zadataka');
     });
   }
 }
