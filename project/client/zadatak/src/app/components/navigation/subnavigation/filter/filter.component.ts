@@ -45,7 +45,7 @@ export class FilterComponent implements OnInit {
   } */
 
   ngOnInit(): void {
-    this.service.getAllAssignments().subscribe((atr: any) => {
+    this.service.getAll().subscribe((atr: any) => {
       this.atributi = atr;
 
       /* if(this.filterParam != null) */

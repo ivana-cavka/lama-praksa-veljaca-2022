@@ -9,11 +9,15 @@ export class ZadatakService {
 
   constructor(public http: HttpClient) { } 
 
-  getAllAssignments() {
+  getAll() {
     return this.http.get(environment.API_URL+'/atributi-zadataka');
   }
 
-  getAssignment(id: any) {
+  getOne(id: any) {
     return this.http.get(environment.API_URL+'/atributi-zadataka/one', {params:id});
+  }
+
+  add(record: any) {
+    return this.http.post(environment.API_URL+'/atributi-zadataka', record);
   }
 }

@@ -41,7 +41,7 @@ export class AtributiZadatakaComponent implements OnInit {
 
   /*  */
   constructor(private service: ZadatakService, private messageService: MessageService) {
-    this.service.getAllAssignments().subscribe((atr: any) => {
+    this.service.getAll().subscribe((atr: any) => {
       this.vrsta = atr;
     });
     /* this.filteredAssignments = this.assignments;
@@ -50,7 +50,7 @@ export class AtributiZadatakaComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.service.getAllAssignments().subscribe((atr: any) => {
+    this.service.getAll().subscribe((atr: any) => {
       this.vrsta = atr;
 
       /* if(this.filterParam != null) */

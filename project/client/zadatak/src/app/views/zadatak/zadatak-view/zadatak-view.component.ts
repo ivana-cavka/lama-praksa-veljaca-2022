@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { MenuItem } from 'primeng/api';
-import { ActivatedRoute } from '@angular/router';
-import { ZadatakService } from 'src/app/services/atributi-zadataka-service/zadatak.service';
+import { Component, Input, OnInit } from '@angular/core';
+import { FormGroup, FormControl, Validators, FormArray, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
+import { MenuItem } from 'primeng/api';
+import { ZadatakService } from 'src/app/services/atributi-zadataka-service/zadatak.service';
+
 
 @Component({
   selector: 'app-zadatak-view',
@@ -10,27 +11,23 @@ import { Router } from '@angular/router';
   styleUrls: ['./zadatak-view.component.scss'],
 })
 export class ZadatakViewComponent implements OnInit {
-  zadatak: any;
-  menuItems: MenuItem[] = [];
-  router!: Router;
+ menuItems: MenuItem[] = [];
 
-  constructor(){}
-  /* constructor(private zadatakServis: ZadatakService, public route: ActivatedRoute) {
-    route.params.subscribe((params) => {
-      console.log(params);
-      zadatakServis.getAssignment({ id: +params['id'] }).subscribe(({ data }: any) => {
-        this.zadatak = data;
-      });
-    });
-  } */
+  form = new FormGroup({
+    id: new FormControl(null, [Validators.required]),
+    naziv: new FormControl(null, [Validators.required]),
+  });
+  constructor(private FormBuilder: FormBuilder, public ZadatakService: ZadatakService, public router: Router) {}
 
-  ngOnInit() {
-      this.menuItems = [
-          {label: 'Unos - Promjena Vrste Zadatka'}
-      ];
+  ngOnInit(): void {
+    this.menuItems = [
+      {label: 'Unos - Promjena Vrste Zadatka'}
+  ];
   }
-
-  /* close (){
-    this.router.navigateByUrl('/atributi-zadataka');
-  } */
+  onSave() {
+    console.log(this.form.value);
+    this.ZadatakService.add(this.form.value).subscribe((result) => {
+      this.router.navigateByUrl('/');
+    });
+  }
 }

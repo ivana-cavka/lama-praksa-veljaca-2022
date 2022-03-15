@@ -1,37 +1,37 @@
 <p-tabMenu [model]="menuItems" [activeItem]="menuItems[0]"></p-tabMenu>
 
-<a routerLink="../..">
-  <button pButton pRipple type="button" label="Zatvori" icon="pi pi-arrow-left" style="margin-right: 2%" class="p-button-text"></button>
-</a>
-<a routerLink="../..">
-  <button pButton pRipple type="button" label="Snimi i zatvori" icon="pi pi-save" class="p-button-text"></button>
-</a>
-<div class="card">
-  <div class="flex flex-column flex-wrap align-items-center justify-content-center card-container yellow-container">
-    <div class="flex w-full h-16 text-white border-round" style="background-color: rgba(26, 56, 101, 255); border-top-left-radius: 20px; border-top-right-radius: 20px">
-      <p class="form-header">Unos - Promjena Vrste Zadatka</p>
-    </div>
-    <div class="inner">
-      <div class="flex align-items-center justify-content-center w-full h-4rem border-round m-2">
-        <span>
-          <p class="form-body-label">
-            <label for="float-input" style="font-size: small; font-weight: bolder">ID Vrste Predmeta</label>
-          </p>
-          <p class="form-body-input w-full">
-            <input id="float-input" type="text" pInputText />
-          </p>
-        </span>
+<form [formGroup]="form">
+  <a routerLink="/atributi-zadataka">
+    <button pButton pRipple type="button" label="Zatvori" icon="pi pi-arrow-left" style="margin-right: 2%" class="p-button-text"></button>
+  </a>
+    <button pButton pRipple type="submit" (click)="onSave()" label="Snimi i zatvori" icon="pi pi-save" class="p-button-text"></button>
+    <div class="card">
+    <div class="flex flex-column flex-wrap align-items-center justify-content-center card-container yellow-container">
+      <div class="flex w-full h-16 text-white border-round" style="background-color: rgba(26, 56, 101, 255); border-top-left-radius: 20px; border-top-right-radius: 20px">
+        <p class="form-header">Unos - Promjena Vrste Zadatka</p>
       </div>
-      <div class="flex align-items-center justify-content-center w-2/5 h-4rem border-round m-2">
-        <span>
-          <p class="form-body-label" style="font-size: small; font-weight: bolder">
-            <label for="float-input">Naziv</label>
-          </p>
-          <p>
-            <input class="form-body-input w-full" id="float-input" type="text" pInputText />
-          </p>
-        </span>
+      <div class="inner">
+          <div class="flex align-items-center justify-content-center w-full h-4rem border-round m-2">
+            <span>
+              <p class="form-body-label">
+                <label for="float-input" style="font-size: small; font-weight: bolder">ID Vrste Predmeta</label>
+              </p>
+              <p class="form-body-input w-full">
+                <input id="float-input" type="text" pInputText formControlName="id"/>
+              </p>
+            </span>
+          </div>
+          <div class="flex align-items-center justify-content-center w-2/5 h-4rem border-round m-2">
+            <span>
+              <p class="form-body-label" style="font-size: small; font-weight: bolder">
+                <label for="float-input">Naziv</label>
+              </p>
+              <p>
+                <input class="form-body-input w-full" id="float-input" type="text" pInputText formControlName="naziv"/>
+              </p>
+            </span>
+          </div>
       </div>
     </div>
   </div>
-</div>
+</form>
