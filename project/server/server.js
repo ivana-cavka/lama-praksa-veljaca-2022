@@ -3,6 +3,21 @@ const app=express();
 const port=3000;
 const fs = require("fs");
 const cors = require("cors");
+const bodyParser = require("body-parser");
+
+app.use(
+  bodyParser.urlencoded({
+    extended: true,
+  })
+);
+app.use(express.json());
+
+const readDb = (path) => JSON.parse(fs.readFileSync(path));
+const saveDb = (path, payload) => {
+  fs.writeFileSync(path, JSON.stringify(payload), { encoding: "utf8" });
+};
+
+app.use(bodyParser.json());
 
 app.use(cors());
 
@@ -38,3 +53,13 @@ app.get("/atributi-predmeta",(req,res)=>{
 app.listen(port,()=>{
     console.log("> Server is up and running on port: "+port)
 });
+
+app.post("/atributi-zadataka", (req, res) => {
+    let atributi = readDb("db/zadatci.json");
+  
+    atributi.push({
+      ...req.body
+    });
+    saveDb("db/zadatci.json", atributi);
+    res.send({ atributi });
+  });
