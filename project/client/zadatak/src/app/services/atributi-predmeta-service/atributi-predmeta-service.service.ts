@@ -5,15 +5,15 @@ import { environment } from 'src/environments/environment';
 @Injectable({
   providedIn: 'root'
 })
-export class ZadatakService {
+export class AtributiPredmetaServiceService {
 
   constructor(public http: HttpClient) { } 
 
-  getAllAssignments() {
-    return this.http.get(environment.API_URL);
+  getAll() {
+    return this.http.get(environment.API_URL+'/atributi-predmeta');
   }
 
-  getAssignment(id: any) {
-    return this.http.get(environment.API_URL+'/atributi-zadataka/one', {params:id});
+  getOne(id: any) {
+    return this.http.get(environment.API_URL+'/atributi-predmeta/one', {params:id});
   }
 }

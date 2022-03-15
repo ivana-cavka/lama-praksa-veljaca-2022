@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/api';
 import { ActivatedRoute } from '@angular/router';
-import { ZadatakService } from 'src/app/services/zadatak.service';
+import { ZadatakService } from 'src/app/services/atributi-zadataka-service/zadatak.service';
 import { Router } from '@angular/router';
 
 @Component({

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AtributiPredmetaServiceService } from 'src/app/services/atributi-predmeta-service/atributi-predmeta-service.service';
 
 @Component({
   selector: 'app-atriputi-predmeta',
@@ -14,25 +15,13 @@ export class AtriputiPredmetaComponent implements OnInit {
   selectedTip: any;
   selectedKlas: any;
 
-  constructor() { }
+  constructor(private service: AtributiPredmetaServiceService) {
+    this.service.getAll().subscribe((atr: any) => {
+      this.vrsta = atr.vrsta;
+      this.tip = atr.tip;
+      this.klas = atr.klas;
+    });
+   }
 
-  ngOnInit(): void {
-    this.vrsta=[{
-      id:'var-01',
-      aktivan : true,
-      naziv: 'test',
-
-    }],
-    this.tip=[{
-      id:'trp-01',
-      aktivan : true,
-      naziv: 'test',
-    }],
-    this.klas=[{
-      id:'koz-01',
-      aktivan : true,
-      naziv: 'test',
-    }]
-  }
-
+  ngOnInit(): void { }
 }

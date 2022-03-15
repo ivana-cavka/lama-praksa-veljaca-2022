@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { ZadatakService } from 'src/app/services/zadatak.service';
+import { ZadatakService } from 'src/app/services/atributi-zadataka-service/zadatak.service';
 import { MessageService } from 'primeng/api';
 
 @Component({

@@ -8,7 +8,7 @@ app.use(cors());
 
 const getData = (path) => JSON.parse(fs.readFileSync(path));
 
-app.get("/",(req,res)=>{
+app.get("/atributi-zadataka",(req,res)=>{
     const zadatci = getData("db/zadatci.json");
     /* res.send( {zadatci} );  */
     res.send( zadatci); 
@@ -21,6 +21,13 @@ app.get("/atributi-zadataka/one",(req, res) => {
 
     const assignment = zadatci.find( (zadatak) => zadatak.id === +id );   
     res.send({ zadatak: assignment });
+});
+
+app.get("/atributi-predmeta",(req,res)=>{
+    const zadatci = getData("db/predmeti.json");
+    /* res.send( {zadatci} );  */
+    res.send( zadatci); 
+    /* console.log("Hello from server. "); */
 });
 
 /* app.get("/", (req, res) => { */

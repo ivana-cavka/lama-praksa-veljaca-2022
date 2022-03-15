@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, Input, OnInit, NgModule } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ZadatakService } from 'src/app/services/zadatak.service';
+import { ZadatakService } from 'src/app/services/atributi-zadataka-service/zadatak.service';
 /* interface Zadatak {
   id: string;
   aktivan: boolean;
