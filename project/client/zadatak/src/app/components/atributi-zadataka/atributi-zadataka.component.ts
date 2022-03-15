@@ -10,11 +10,10 @@ import { MessageService } from 'primeng/api';
   providers: [MessageService],
 })
 export class AtributiZadatakaComponent implements OnInit {
-  vrsta = [{}];
-
   selectedVrsta: any;
+  vrsta: any[] = [];
 
-  /*  */
+/*
   atributi: any;
   @Input() searchText: any;
 
@@ -28,50 +27,31 @@ export class AtributiZadatakaComponent implements OnInit {
   set listFilter(value: string) {
     this._listFilter = value;
     this.filteredAssignments = this.listFilter ? this.doFilter(this.listFilter) : this.assignments;
-    /* console.log(this.isFiltered); */
+    // console.log(this.isFiltered);
   }
 
-  filteredAssignments: any[] = [];
-  assignments: any[] = [];
+  filteredAssignments: any[] = []; */
 
-  doFilter(filterBy: string): any[] {
+/*   doFilter(filterBy: string): any[] {
     this.isFiltered = true;
     filterBy = filterBy.toLocaleLowerCase();
-    /* console.log(this.assignments.filter((game: any) => game.id.toLocaleLowerCase().indexOf(filterBy) !== -1)); */
+    // console.log(this.assignments.filter((game: any) => game.id.toLocaleLowerCase().indexOf(filterBy) !== -1));
     return this.assignments.filter((zadatak: any) => zadatak.id.toLocaleLowerCase().indexOf(filterBy) !== -1);
-  }
+  } */
 
   /*  */
   constructor(private service: ZadatakService, private messageService: MessageService) {
     this.service.getAllAssignments().subscribe((atr: any) => {
-      this.assignments = atr;
+      this.vrsta = atr;
     });
-    this.filteredAssignments = this.assignments;
+    /* this.filteredAssignments = this.assignments;
     this.listFilter = '';
-    this.isFiltered = false;
+    this.isFiltered = false; */
   }
 
   ngOnInit(): void {
-    this.vrsta = [
-      {
-        id: 'TSV-01',
-        aktivan: true,
-        naziv: 'Izrada dokumenta',
-      },
-      {
-        id: 'TSV-02',
-        aktivan: false,
-        naziv: 'Kontakt stranke',
-      },
-      {
-        id: 'TSV-03',
-        aktivan: false,
-        naziv: 'Organizacija sastanka',
-      },
-    ];
-
     this.service.getAllAssignments().subscribe((atr: any) => {
-      this.atributi = atr;
+      this.vrsta = atr;
 
       /* if(this.filterParam != null) */
       /* console.log(this.searchText); */
