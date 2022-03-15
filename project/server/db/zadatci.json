@@ -13,5 +13,10 @@
     "id": "TSV-03",
     "aktivan": false,
     "naziv": "Organizacija sastanka"
+  },
+  {
+    "id": "TSV-04",
+    "aktivan": true,
+    "naziv": "Novi zadatak"
   }
 ]
