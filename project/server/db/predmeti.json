@@ -1,33 +1,43 @@
 {
-    "vrsta":
-        [{
-            "id":"var-01",
-            "aktivan" : "true",
-            "naziv": "test"
-        },
-        {
-            "id":"var-02",
-            "aktivan" : "false",
-            "naziv": "test2"
-        },
-        {
-            "id":"var-03",
-            "aktivan" : "true",
-            "naziv": "novi"
-        }
-    ],
-    "tip":
-        [{
-            "id":"var-01",
-            "aktivan" : "true",
-            "naziv": "test"
-        }
-    ],
-    "klas":
-        [{
-            "id":"var-01",
-            "aktivan" : "true",
-            "naziv": "test"
-        }
-    ]
+  "vrsta": [
+    {
+      "id": "var-01",
+      "aktivan": true,
+      "naziv": "test"
+    },
+    {
+      "id": "var-02",
+      "aktivan": false,
+      "naziv": "test2"
+    },
+    {
+      "id": "var-03",
+      "aktivan": true,
+      "naziv": "novi"
+    }
+  ],
+  "tip": [
+    {
+      "id": "tip-01",
+      "aktivan": true,
+      "naziv": "test"
+    },
+    {
+      "id": "tip-02",
+      "aktivan": false,
+      "naziv": "test2"
+    }
+  ],
+  "klas": [
+    {
+      "id": "klas-01",
+      "aktivan": false,
+      "naziv": "test"
+    },
+    {
+      "id": "klas-02",
+      "aktivan": true,
+      "naziv": "test2"
+    }
+  ]
 }

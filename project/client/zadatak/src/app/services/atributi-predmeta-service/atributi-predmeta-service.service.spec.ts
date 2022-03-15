@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
+import { AtributiPredmetaService } from './atributi-predmeta-service.service';
 
-import { AtributiPredmetaServiceService } from './atributi-predmeta-service.service';
 
-describe('AtributiPredmetaServiceService', () => {
-  let service: AtributiPredmetaServiceService;
+describe('AtributiPredmetaService', () => {
+  let service: AtributiPredmetaService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(AtributiPredmetaServiceService);
+    service = TestBed.inject(AtributiPredmetaService);
   });
 
   it('should be created', () => {

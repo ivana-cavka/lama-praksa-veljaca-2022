@@ -5,7 +5,7 @@ import { environment } from 'src/environments/environment';
 @Injectable({
   providedIn: 'root'
 })
-export class AtributiPredmetaServiceService {
+export class AtributiPredmetaService {
 
   constructor(public http: HttpClient) { } 
 
