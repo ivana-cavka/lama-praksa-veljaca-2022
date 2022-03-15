@@ -20,6 +20,8 @@ import {ButtonModule} from 'primeng/button';
 import {TabMenuModule} from 'primeng/tabmenu';
 import { FormsModule } from '@angular/forms';
 import { AtributiPismenaComponent } from './components/atributi-pismena/atributi-pismena/atributi-pismena.component';
+import { AtributiPredmetaPodatciComponent } from './components/navigation/subnavigation/atributi-predmeta-podatci/atributi-predmeta-podatci.component';
+import { AtributiPredmetaFilterComponent } from './components/navigation/subnavigation/atributi-predmeta-filter/atributi-predmeta-filter.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,7 @@ import { AtributiPismenaComponent } from './components/atributi-pismena/atributi
     AtributiZadatakaComponent,
     ZadatakViewComponent,
     PodatciComponent,
-    FilterComponent,AtributiPismenaComponent
+    FilterComponent,AtributiPismenaComponent, AtributiPredmetaPodatciComponent, AtributiPredmetaFilterComponent
 
   ],
   imports: [

@@ -9,6 +9,11 @@ export class AtriputiPredmetaComponent implements OnInit {
   vrsta=[{}]
   tip=[{}]
   klas=[{}]
+
+  selectedVrsta: any;
+  selectedTip: any;
+  selectedKlas: any;
+
   constructor() { }
 
   ngOnInit(): void {

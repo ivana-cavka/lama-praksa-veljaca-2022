@@ -1,8 +1,22 @@
 <p-tabView styleClass="bg-lama bg-blue-800 border-0 rounded-none">
   <p-tabPanel header="VRSTA PREDMETA">
+    <div class="w-1/2; float-left" style="margin-left: 1%; padding-top: 1px; padding-bottom: 1px">
+      <span class="ui-float-label h-1/6">
+        <label style="padding-bottom: 20px" for="float-input"> <i class="pi pi-filter"></i></label>
+        <!-- <input class="h-1/6" id="float-input" type="text" size="10" pInputText /> -->
+        <!-- <input ng-model="searchText" class="h-1/6 form-control" id="float-input" type="text" size="10" pInputText ng-keyup="filterFunc()" /> -->
+        <input type="text" class="h-1/6 form-control" id="filterInput" placeholder="Filter... " size="10" pInputText />
+      </span>
+    </div>
+    <div styleClass="w-full h-1/6 justify-between">
+      <div class="flex px-4" style="margin-left: 90%; padding-top: 10px; padding-bottom: 10px">
+        <app-atributi-predmeta-podatci [selectedVrsta]="selectedVrsta"></app-atributi-predmeta-podatci>
+      </div>
+    </div>
+
     <div class="main-page-template">
       <div class="flex flex-col w-11/12 h-full" styleClass="bg-blue-800 text-primary" class="text-primary">
-        <p-table [value]="vrsta">
+        <p-table [value]="vrsta"  selectionMode="single" [(selection)]="selectedVrsta" dataKey="id" responsiveLayout="scroll">
           <ng-template pTemplate="header">
             <tr>
               <th>ID</th>
@@ -11,7 +25,7 @@
             </tr>
           </ng-template>
           <ng-template pTemplate="body" let-vrsta>
-            <tr>
+            <tr [pSelectableRow]="vrsta">
               <td>{{ vrsta.id }}</td>
               <td>
                 <i *ngIf="vrsta.aktivan; else inactive" class="pi pi-check-circle text-green-500"></i>
@@ -23,10 +37,24 @@
       </div>
     </div>
   </p-tabPanel>
+
   <p-tabPanel header="TIP PREDMETA">
+    <div class="w-1/2; float-left" style="margin-left: 1%; padding-top: 1px; padding-bottom: 1px">
+      <span class="ui-float-label h-1/6">
+        <label style="padding-bottom: 20px" for="float-input"> <i class="pi pi-filter"></i></label>
+        <!-- <input class="h-1/6" id="float-input" type="text" size="10" pInputText /> -->
+        <!-- <input ng-model="searchText" class="h-1/6 form-control" id="float-input" type="text" size="10" pInputText ng-keyup="filterFunc()" /> -->
+        <input type="text" class="h-1/6 form-control" id="filterInput" placeholder="Filter... " size="10" pInputText />
+      </span>
+    </div>
+    <div styleClass="w-full h-1/6 justify-between">
+      <div class="flex px-4" style="margin-left: 90%; padding-top: 10px; padding-bottom: 10px">
+        <app-atributi-predmeta-podatci [selectedTip]="selectedTip"></app-atributi-predmeta-podatci>
+      </div>
+    </div>
     <div class="main-page-template">
       <div class="flex flex-col w-11/12 h-full" styleClass="bg-blue-800 text-primary" class="text-primary">
-        <p-table [value]="tip">
+        <p-table [value]="tip"  selectionMode="single" [(selection)]="selectedTip" dataKey="id" responsiveLayout="scroll">
           <ng-template pTemplate="header">
             <tr>
               <th>ID</th>
@@ -35,7 +63,7 @@
             </tr>
           </ng-template>
           <ng-template pTemplate="body" let-tip>
-            <tr>
+            <tr [pSelectableRow]="tip">
               <td>{{ tip.id }}</td>
               <!-- <td>{{tip.aktivan}}</td> -->
               <td>
@@ -48,10 +76,24 @@
       </div>
     </div>
   </p-tabPanel>
+
   <p-tabPanel header="KLASIFIKACIJA PREDMETA">
+    <div class="w-1/2; float-left" style="margin-left: 1%; padding-top: 1px; padding-bottom: 1px">
+      <span class="ui-float-label h-1/6">
+        <label style="padding-bottom: 20px" for="float-input"> <i class="pi pi-filter"></i></label>
+        <!-- <input class="h-1/6" id="float-input" type="text" size="10" pInputText /> -->
+        <!-- <input ng-model="searchText" class="h-1/6 form-control" id="float-input" type="text" size="10" pInputText ng-keyup="filterFunc()" /> -->
+        <input type="text" class="h-1/6 form-control" id="filterInput" placeholder="Filter... " size="10" pInputText />
+      </span>
+    </div>
+    <div styleClass="w-full h-1/6 justify-between">
+      <div class="flex px-4" style="margin-left: 90%; padding-top: 10px; padding-bottom: 10px">
+        <app-atributi-predmeta-podatci [selectedKlas]="selectedKlas"></app-atributi-predmeta-podatci>
+      </div>
+    </div>
     <div class="main-page-template">
       <div class="flex flex-col w-11/12 h-full" styleClass="bg-blue-800 text-primary" class="text-primary">
-        <p-table [value]="klas">
+        <p-table [value]="klas"  selectionMode="single" [(selection)]="selectedKlas" dataKey="id" responsiveLayout="scroll">
           <ng-template pTemplate="header">
             <tr>
               <th>ID</th>
@@ -60,7 +102,7 @@
             </tr>
           </ng-template>
           <ng-template pTemplate="body" let-klas>
-            <tr>
+            <tr [pSelectableRow]="klas">
               <td>{{ klas.id }}</td>
               <td>
                 <i *ngIf="klas.aktivan; else inactive" class="pi pi-check-circle text-green-500"></i>
