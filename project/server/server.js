@@ -76,10 +76,13 @@ app.post("/atributi-zadataka", (req, res) => {
 
 app.post("/atributi-predmeti", (req, res) => {
   let atributi = readDb("db/predmeti.json");
+  console.log(atributi.vrsta);
 
-  atributi.push({
+  atributi.vrsta.push({
     ...req.body,
   });
+
   saveDb("db/predmeti.json", atributi);
   res.send({ atributi });
 });
+
