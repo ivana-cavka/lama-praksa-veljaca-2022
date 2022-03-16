@@ -6,7 +6,7 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class ZadatakService {
-
+  
   constructor(public http: HttpClient) { } 
 
   getAll() {
@@ -14,8 +14,12 @@ export class ZadatakService {
   }
 
   getOne(id: any) {
-    return this.http.get(environment.API_URL+'/atributi-zadataka/one', {params:id});
+    return this.http.get(environment.API_URL+'/atributi-zadataka/one', { params: { id } });
   }
+
+  /* getOneTodo({ id }: any){
+    return this.http.get(`${environment.API_URL}/one`, { params: { id } });
+  } */
 
   add(record: any) {
     return this.http.post(environment.API_URL+'/atributi-zadataka', record);

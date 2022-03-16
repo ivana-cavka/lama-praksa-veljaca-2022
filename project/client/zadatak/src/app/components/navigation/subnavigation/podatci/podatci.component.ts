@@ -19,7 +19,7 @@ export class PodatciComponent implements OnInit {
   ngOnInit() {
     this.items = [
         {label: 'Dodaj', icon: 'pi pi-fw pi-plus', routerLink: '/atributi-zadataka/new'},
-        {label: 'Uredi', icon: 'pi pi-fw pi-pencil'},
+        {label: 'Uredi', icon: 'pi pi-fw pi-pencil', routerLink: ['/atributi-zadataka/edit', "TSV-04"]},
         {label: 'Obriši', icon: 'pi pi-fw pi-trash', command: () => {
           this.delete();}
         }
