@@ -24,10 +24,40 @@ import { AtributiPredmetaPodatciComponent } from './components/navigation/subnav
 import { AtributiPredmetaFilterComponent } from './components/navigation/subnavigation/atributi-predmeta-filter/atributi-predmeta-filter.component';
 import { ToggleButtonModule } from 'primeng/togglebutton';
 import { PredmetViewComponent } from './views/predmet/predmet-view/predmet-view.component';
+import { ZadatakEditComponent } from './views/zadatak/zadatak-edit/zadatak-edit.component';
 
 @NgModule({
-  declarations: [AppComponent, NavigationComponent, InitialViewComponent, AtriputiPredmetaComponent, AtributiZadatakaComponent, ZadatakViewComponent, PredmetViewComponent, PodatciComponent, FilterComponent, AtributiPismenaComponent, AtributiPredmetaPodatciComponent, AtributiPredmetaFilterComponent],
-  imports: [BrowserModule, AppRoutingModule, MenubarModule, InputTextModule, TabViewModule, TableModule, HttpClientModule, MenuModule, BrowserAnimationsModule, ButtonModule, TabMenuModule, FormsModule, TabViewModule, TableModule, HttpClientModule, ToggleButtonModule, ReactiveFormsModule],
+  declarations: [
+    AppComponent,
+    NavigationComponent,
+    InitialViewComponent,
+    AtriputiPredmetaComponent,
+    AtributiZadatakaComponent,
+    ZadatakViewComponent,
+    PodatciComponent,
+    FilterComponent,
+    AtributiPismenaComponent,
+    AtributiPredmetaPodatciComponent,
+    AtributiPredmetaFilterComponent, 
+    ZadatakEditComponent,
+    PredmetViewComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    MenubarModule,
+    InputTextModule,
+    TabViewModule,TableModule,
+    HttpClientModule,
+    MenuModule,
+    BrowserAnimationsModule,
+    ButtonModule,
+    TabMenuModule,
+    FormsModule,TabViewModule,TableModule,
+    HttpClientModule,
+    ToggleButtonModule,
+    ReactiveFormsModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

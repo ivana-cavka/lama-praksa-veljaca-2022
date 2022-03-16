@@ -8,6 +8,7 @@ import { ZadatakViewComponent } from './views/zadatak/zadatak-view/zadatak-view.
 import { PodatciComponent } from './components/navigation/subnavigation/podatci/podatci.component';
 import { AtributiPismenaComponent } from './components/atributi-pismena/atributi-pismena/atributi-pismena.component';
 import { PredmetViewComponent } from './views/predmet/predmet-view/predmet-view.component';
+import { ZadatakEditComponent } from './views/zadatak/zadatak-edit/zadatak-edit.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, },
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'atributi-pismena', component: AtributiPismenaComponent },
   { path: 'atributi-predmeta/one/:id', component: PredmetViewComponent},
   { path: 'atributi-predmeta/new', component: PredmetViewComponent },
+  { path: 'atributi-zadataka/edit/:id', component: ZadatakEditComponent }
 ];
 
 @NgModule({

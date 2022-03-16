@@ -35,7 +35,7 @@ app.get("/atributi-zadataka/one",(req, res) => {
 
     const zadatci = getData("db/zadatci.json");
 
-    const assignment = zadatci.find( (zadatak) => zadatak.id === +id );   
+    const assignment = zadatci.find( zadatak => zadatak.id == id );   
     res.send({ zadatak: assignment });
 });
 
