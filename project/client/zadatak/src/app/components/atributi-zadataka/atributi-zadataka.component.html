@@ -14,12 +14,17 @@
     <!--  -->
     <div styleClass="w-full h-1/6 justify-between">
       <div class="flex px-4" style="margin-left: 90%; padding-top: 10px; padding-bottom: 10px">
-        <app-podatci [selectedVrsta]="selectedVrsta"></app-podatci>
+        <div>
+          <p-menu #menu [popup]="true" [model]="items"></p-menu>
+          <button type="button" pButton pRipple icon="pi pi-book" class="p-button-text" style="font-variant: small-caps; color:black;"
+          label="Podatci" (click)="menu.toggle($event)"></button>
+        </div>
       </div>
     </div>
     <div class="main-page-template">
       <div class="flex flex-col w-11/12 h-full" styleClass="bg-blue-800 text-primary" class="text-primary">
-        <p-table [value]="vrsta"  selectionMode="single" [(selection)]="selectedVrsta" dataKey="id" responsiveLayout="scroll">
+        <p-table [value]="vrsta"  selectionMode="single" [(selection)]="selectedVrsta" dataKey="id" responsiveLayout="scroll"
+        (onRowSelect)="onRowSelect()" (onRowUnselect)="onRowUnselect()">
           <ng-template pTemplate="header">
             <tr>
               <th>ID</th>

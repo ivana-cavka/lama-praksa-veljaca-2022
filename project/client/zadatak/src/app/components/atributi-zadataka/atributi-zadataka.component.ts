@@ -1,7 +1,8 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { ZadatakService } from 'src/app/services/atributi-zadataka-service/zadatak.service';
-import { MessageService } from 'primeng/api';
+import { MenuItem, MessageService } from 'primeng/api';
+import { Table } from 'primeng/table';
 
 @Component({
   selector: 'app-atributi-zadataka',
@@ -11,58 +12,64 @@ import { MessageService } from 'primeng/api';
 })
 export class AtributiZadatakaComponent implements OnInit {
   selectedVrsta: any;
+  rememberSelected: any;
   vrsta: any[] = [];
+  items: MenuItem[] = [];
 
-/*
-  atributi: any;
-  @Input() searchText: any;
-
-  _listFilter = '';
-
-  isFiltered!: boolean;
-
-  get listFilter(): string {
-    return this._listFilter;
-  }
-  set listFilter(value: string) {
-    this._listFilter = value;
-    this.filteredAssignments = this.listFilter ? this.doFilter(this.listFilter) : this.assignments;
-    // console.log(this.isFiltered);
-  }
-
-  filteredAssignments: any[] = []; */
-
-/*   doFilter(filterBy: string): any[] {
-    this.isFiltered = true;
-    filterBy = filterBy.toLocaleLowerCase();
-    // console.log(this.assignments.filter((game: any) => game.id.toLocaleLowerCase().indexOf(filterBy) !== -1));
-    return this.assignments.filter((zadatak: any) => zadatak.id.toLocaleLowerCase().indexOf(filterBy) !== -1);
-  } */
-
-  /*  */
-  constructor(private service: ZadatakService, private messageService: MessageService) {
+  constructor(private service: ZadatakService, private messageService: MessageService, public router: Router, private route: ActivatedRoute) {
     this.service.getAll().subscribe((atr: any) => {
       this.vrsta = atr;
     });
-    /* this.filteredAssignments = this.assignments;
-    this.listFilter = '';
-    this.isFiltered = false; */
   }
 
-  ngOnInit(): void {
+  ngOnInit(selected?: any): void {
     this.service.getAll().subscribe((atr: any) => {
       this.vrsta = atr;
 
-      /* if(this.filterParam != null) */
-      /* console.log(this.searchText); */
-
-      /* console.log('Data:');
-        console.log(this.atributi[0].aktivan); */
+      if (selected) {
+        this.selectedVrsta = selected
+      }
+      else {
+        var id: any;
+        this.route.params.subscribe((params: Params) => id = params['selected']);
+        this.selectedVrsta = this.vrsta.find((zadatak) => zadatak.id == id);
+      }
+      if (!this.selectedVrsta){
+        this.selectedVrsta = this.vrsta[0];
+      }
+      
+      this.rememberSelected = this.selectedVrsta;
+      this.items = [
+        {label: 'Dodaj', icon: 'pi pi-fw pi-plus', routerLink: '/atributi-zadataka/new'},
+        {label: 'Uredi', icon: 'pi pi-fw pi-pencil', routerLink: ['/atributi-zadataka/edit', this.selectedVrsta.id]},
+        {label: 'Obriši', icon: 'pi pi-fw pi-trash', command: () => {
+          this.delete();}
+        }
+      ];
     });
   }
+  
+  delete(){
+    this.service.delete(this.selectedVrsta.id).subscribe((result: any) => {
+      this.router.navigateByUrl('/atributi-zadataka');
+      this.ngOnInit();
+    });
+    
+  }
 
-  /* editAssignment(assignment: any) {
-    let route = '/atributi-zadataka/one/';
-    this.router.navigate([route], { queryParams: { id: contact.id } });
-  } */
+  onRowSelect(){
+    this.items = [
+      {label: 'Dodaj', icon: 'pi pi-fw pi-plus', routerLink: '/atributi-zadataka/new'},
+      {label: 'Uredi', icon: 'pi pi-fw pi-pencil', routerLink: ['/atributi-zadataka/edit', this.selectedVrsta.id]},
+      {label: 'Obriši', icon: 'pi pi-fw pi-trash', command: () => {
+        this.delete();}
+      }
+    ];
+    this.rememberSelected = this.selectedVrsta;
+  }
+
+  onRowUnselect(){
+    this.ngOnInit(this.rememberSelected);
+  }
+  
 }

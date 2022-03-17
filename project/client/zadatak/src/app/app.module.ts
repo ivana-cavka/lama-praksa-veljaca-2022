@@ -11,7 +11,6 @@ import { TableModule } from 'primeng/table';
 import { AtriputiPredmetaComponent } from './components/atriputi-predmeta/atriputi-predmeta.component';
 import { AtributiZadatakaComponent } from './components/atributi-zadataka/atributi-zadataka.component';
 import { ZadatakViewComponent } from './views/zadatak/zadatak-view/zadatak-view.component';
-import { PodatciComponent } from './components/navigation/subnavigation/podatci/podatci.component';
 import { FilterComponent } from './components/navigation/subnavigation/filter/filter.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MenuModule } from 'primeng/menu';
@@ -34,7 +33,6 @@ import { ZadatakEditComponent } from './views/zadatak/zadatak-edit/zadatak-edit.
     AtriputiPredmetaComponent,
     AtributiZadatakaComponent,
     ZadatakViewComponent,
-    PodatciComponent,
     FilterComponent,
     AtributiPismenaComponent,
     AtributiPredmetaPodatciComponent,

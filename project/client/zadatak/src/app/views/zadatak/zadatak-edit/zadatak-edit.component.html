@@ -1,9 +1,7 @@
 <p-tabMenu [model]="menuItems" [activeItem]="menuItems[0]"></p-tabMenu>
 
 <form [formGroup]="form">
-  <a routerLink="/atributi-zadataka">
-    <button pButton pRipple type="button" label="Zatvori" icon="pi pi-arrow-left" style="margin-right: 2%" class="p-button-text"></button>
-  </a>
+    <button pButton pRipple type="button" (click)="onClose()" label="Zatvori" icon="pi pi-arrow-left" style="margin-right: 2%" class="p-button-text"></button>
     <button pButton pRipple type="submit" (click)="onSave()" label="Snimi i zatvori" icon="pi pi-save" class="p-button-text"></button>
     <div class="card">
     <div>
@@ -13,15 +11,16 @@
       <div class="inner">
           <div class="flex align-items-center justify-content-center w-full h-4rem border-round m-2">
             <span>
-              <p class="form-body-label">
-                <label for="float-input" style="font-size: small; font-weight: bolder">ID Vrste Predmeta</label>
+              <p class="form-body-label w-full">
+                <label for="float-input" style="font-size: small; font-weight: bolder;">ID Vrste Predmeta</label>
               </p>
               <p class="form-body-input w-full">
-                <input id="float-input" type="text" pInputText formControlName="id"/>
+                <input type="hidden" formControlName="id"/>
+                <a class="w-full">{{zadatak.id}}</a>
               </p>
             </span>
           </div>
-          <div class="flex align-items-center justify-content-center w-2/5 h-4rem border-round m-2">
+          <div class="flex align-items-center justify-content-center w-full h-4rem border-round m-2">
             <span>
               <p class="form-body-label" style="font-size: small; font-weight: bolder">
                 <label for="float-input">Naziv</label>

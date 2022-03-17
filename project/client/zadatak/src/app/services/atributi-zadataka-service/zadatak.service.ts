@@ -17,11 +17,15 @@ export class ZadatakService {
     return this.http.get(environment.API_URL+'/atributi-zadataka/one', { params: { id } });
   }
 
-  /* getOneTodo({ id }: any){
-    return this.http.get(`${environment.API_URL}/one`, { params: { id } });
-  } */
-
   add(record: any) {
     return this.http.post(environment.API_URL+'/atributi-zadataka', record);
+  }
+
+  edit(record: any) {
+    return this.http.put(environment.API_URL+'/atributi-zadataka/', record);
+  }
+
+  delete(id: any) {
+    return this.http.delete(environment.API_URL+'/atributi-zadataka/', { params: { id } });
   }
 }

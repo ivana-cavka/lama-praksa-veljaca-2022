@@ -24,24 +24,26 @@ export class ZadatakEditComponent implements OnInit {
     this.menuItems = [
       {label: 'Unos - Promjena Vrste Zadatka'}
     ];
-    let id = this.route.snapshot.paramMap.get('id');
-    this.service.getOne(id).subscribe((atr: any) => {
-      this.zadatak = atr;
-      console.log("1:")
-      console.log(this.zadatak);
-    });
-    console.log("2:")
-    console.log(this.zadatak);
-    this.form.reset({
-      id: this.zadatak.id,
-      naziv: this.zadatak.naziv,
-    });
-  }
-  onSave() {
-    console.log(this.form.value);
-    this.service.add(this.form.value).subscribe((result) => {
-      this.router.navigateByUrl('/atributi-zadataka');
+    this.service.getAll().subscribe((atr: any) => {
+      let vrsta = atr;
+      let id = this.route.snapshot.paramMap.get('id');
+      this.zadatak = vrsta.find((zadatak: any) => zadatak.id == id);
+      this.form.reset({
+        id: this.zadatak.id,
+        naziv: this.zadatak.naziv,
+      });
     });
   }
 
+  onSave() {
+    //this.form.value.id = this.zadatak.id;
+    console.log(this.form.value);
+    this.service.edit(this.form.value).subscribe((result) => {
+      this.router.navigate(["/atributi-zadataka", this.zadatak.id]);
+    });
+  }
+
+  onClose(){
+    this.router.navigate(["/atributi-zadataka", this.zadatak.id]);
+  }
 }

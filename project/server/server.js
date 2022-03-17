@@ -25,9 +25,8 @@ const getData = (path) => JSON.parse(fs.readFileSync(path));
 
 app.get("/atributi-zadataka", (req, res) => {
   const zadatci = getData("db/zadatci.json");
-  /* res.send( {zadatci} );  */
+  zadatci.sort(compare);
   res.send(zadatci);
-  /* console.log("Hello from server. "); */
 });
 
 app.get("/atributi-zadataka/one", (req, res) => {
@@ -86,3 +85,45 @@ app.post("/atributi-predmeti", (req, res) => {
   res.send({ atributi });
 });
 
+app.put("/atributi-zadataka/", (req, res) => {
+  let predmeti = readDb("db/zadatci.json");
+  console.log(req.body.id);
+
+  id = req.body.id;
+  console.log("id:")
+  console.log(id);
+  var removed = predmeti.filter(function(value, index, arr){ 
+    return value.id != id;
+  });
+  console.log("Dataaa:");
+  console.log(removed);
+
+  removed.push({
+    ...req.body,
+  });
+
+  saveDb("db/zadatci.json", removed);
+  res.send({ removed });
+});
+
+app.delete("/atributi-zadataka/", (req, res) => {
+  let predmeti = readDb("db/zadatci.json");
+
+  const { id } = req.query;
+  var removed = predmeti.filter(function(value, index, arr){ 
+    return value.id != id;
+  });
+
+  saveDb("db/zadatci.json", removed);
+  res.send({ removed });
+});
+
+function compare( a, b ) {
+  if ( a.id < b.id ){
+    return -1;
+  }
+  if ( a.id > b.id ){
+    return 1;
+  }
+  return 0;
+}
