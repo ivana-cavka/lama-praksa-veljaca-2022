@@ -6,11 +6,14 @@ import { environment } from "src/environments/environment";
     providedIn:'root'
 })
 export class AtributiPismenaService{
-    constructor(public http:HttpClient){
-    }
-    getAll(){
-        console.log("Service:");
-        console.log(this.http.get(environment.API_URL));
-        return this.http.get(environment.API_URL);
-    }
+    constructor(public http:HttpClient){ }
+    getAll(){ return this.http.get(environment.API_URL+'/atributi-pismena'); }
+
+    getOne(id: any) { return this.http.get(environment.API_URL+'/atributi-pismena/one', { params: { id } }); }
+
+    add(record: any) { return this.http.post(environment.API_URL+'/atributi-pismena', record); }
+
+    edit(record: any) { return this.http.put(environment.API_URL+'/atributi-pismena/', record); }
+
+    delete(id: any) { return this.http.delete(environment.API_URL+'/atributi-pismena/', { params: { id } }); }
 }
